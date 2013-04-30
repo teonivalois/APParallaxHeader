@@ -6,13 +6,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @class APParallaxView;
 @class ShadowView;
 
 @interface UIScrollView (APParallaxHeader)
 
-- (void)addParallaxWithImage:(UIImage *)image andHeight:(CGFloat)height;
+- (void)addParallaxWithMapView:(MKMapView *)mapView andHeight:(CGFloat)height;
 
 @property (nonatomic, strong, readonly) APParallaxView *parallaxView;
 @property (nonatomic, assign) BOOL showsParallax;
@@ -29,7 +30,7 @@ typedef NSUInteger APParallaxTrackingState;
 @interface APParallaxView : UIView
 
 @property (nonatomic, readonly) APParallaxTrackingState state;
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) ShadowView *shadowView;
 
 @end
