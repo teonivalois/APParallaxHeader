@@ -6,7 +6,7 @@
 //
 
 #import "UIScrollView+APParallaxHeader.h"
-#import <MapKit/MapKit.h>
+
 #import <QuartzCore/QuartzCore.h>
 
 @interface APParallaxView ()
@@ -30,17 +30,11 @@ static char UIScrollViewParallaxView;
 
 @implementation UIScrollView (APParallaxHeader)
 
-- (void)addParallaxWithMapView:(MKMapView *)mapView andHeight:(CGFloat)height
-{
+- (void)addParallaxWithImage:(UIImage *)image andHeight:(CGFloat)height {
+    
     if(!self.parallaxView) {
-        CGRect newFrame = CGRectMake(0, 0, self.bounds.size.width, height);
-        APParallaxView *view = [[APParallaxView alloc] initWithFrame:newFrame];
-        
-        mapView.frame = newFrame;
-        [mapView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-        [mapView setContentMode:UIViewContentModeScaleAspectFit];
-        [mapView setClipsToBounds:YES];
-        [view addSubview:mapView];
+        APParallaxView *view = [[APParallaxView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, height)];
+        [view.imageView setImage:image];
         
         view.scrollView = self;
         view.parallaxHeight = height;
@@ -64,8 +58,6 @@ static char UIScrollViewParallaxView;
                              OBJC_ASSOCIATION_ASSIGN);
     [self didChangeValueForKey:@"APParallaxView"];
 }
-
-
 
 - (APParallaxView *)parallaxView {
     return objc_getAssociatedObject(self, &UIScrollViewParallaxView);
@@ -156,11 +148,11 @@ static char UIScrollViewParallaxView;
         [self setState:APParallaxTrackingActive];
         [self setAutoresizesSubviews:YES];
         
-        self.contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
-        [self.contentView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-        [self.contentView setContentMode:UIViewContentModeScaleAspectFill];
-        [self.contentView setClipsToBounds:YES];
-        [self addSubview:self.contentView];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(frame), CGRectGetHeight(frame))];
+        [self.imageView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+        [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
+        [self.imageView setClipsToBounds:YES];
+        [self addSubview:self.imageView];
         
         self.shadowView = [[ShadowView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(frame)-8, CGRectGetWidth(frame), 8)];
         [self.shadowView setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
