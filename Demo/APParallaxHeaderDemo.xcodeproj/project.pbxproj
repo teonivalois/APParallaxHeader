@@ -21,7 +21,6 @@
 		C72B533B171834E60093E24F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C72B533A171834E60093E24F /* MasterViewController.m */; };
 		C7E3C5FF17183E4500489EE2 /* ParallaxImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7E3C5FE17183E4500489EE2 /* ParallaxImage.jpg */; };
 		C7E3C605171842CA00489EE2 /* UIScrollView+APParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E3C604171842CA00489EE2 /* UIScrollView+APParallaxHeader.m */; };
-		FCA07D60172F55F000DFA6C6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA07D5F172F55F000DFA6C6 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		C7E3C5FE17183E4500489EE2 /* ParallaxImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ParallaxImage.jpg; sourceTree = "<group>"; };
 		C7E3C603171842CA00489EE2 /* UIScrollView+APParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+APParallaxHeader.h"; sourceTree = "<group>"; };
 		C7E3C604171842CA00489EE2 /* UIScrollView+APParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+APParallaxHeader.m"; sourceTree = "<group>"; };
-		FCA07D5F172F55F000DFA6C6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA07D60172F55F000DFA6C6 /* MapKit.framework in Frameworks */,
 				113BBD0A171B0A3800BC6574 /* QuartzCore.framework in Frameworks */,
 				C72B531F171834E60093E24F /* UIKit.framework in Frameworks */,
 				C72B5321171834E60093E24F /* Foundation.framework in Frameworks */,
@@ -85,7 +82,6 @@
 		C72B531D171834E60093E24F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FCA07D5F172F55F000DFA6C6 /* MapKit.framework */,
 				113BBD09171B0A3800BC6574 /* QuartzCore.framework */,
 				C72B531E171834E60093E24F /* UIKit.framework */,
 				C72B5320171834E60093E24F /* Foundation.framework */,

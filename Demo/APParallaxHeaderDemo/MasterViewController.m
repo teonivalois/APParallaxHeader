@@ -7,25 +7,16 @@
 //
 
 #import "MasterViewController.h"
-#import <MapKit/MapKit.h>
+
 #import "UIScrollView+APParallaxHeader.h"
 
 @implementation MasterViewController
-
-MKMapView *mapView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    mapView = [[MKMapView alloc] init];
-    
-    [self.tableView addParallaxWithMapView:mapView andHeight:160];
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    NSLog(@"viewDidAppear: %@", NSStringFromCGRect(mapView.frame));
+    [self.tableView addParallaxWithImage:[UIImage imageNamed:@"ParallaxImage.jpg"] andHeight:160];
 }
 
 #pragma mark - Table View
