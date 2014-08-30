@@ -10,13 +10,19 @@
 
 #import "UIScrollView+APParallaxHeader.h"
 
+@interface MasterViewController ()
+- (void) tap:(UIGestureRecognizer*)gesture;
+@end
+
 @implementation MasterViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    [self.tableView addParallaxWithImage:[UIImage imageNamed:@"ParallaxImage.jpg"] andHeight:160];
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ParallaxImage.jpg"]];
+    [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]];
+    [self.tableView addParallaxWithView:imageView andHeight:160];
 }
 
 #pragma mark - Table View
@@ -37,6 +43,11 @@
 
     cell.textLabel.text = [NSString stringWithFormat:@"Row %i", indexPath.row+1];
     return cell;
+}
+
+- (void)tap:(UIGestureRecognizer *)gesture
+{
+    NSLog(@"Image tapped!");
 }
 
 @end

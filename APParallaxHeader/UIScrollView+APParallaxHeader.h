@@ -13,7 +13,7 @@
 
 @interface UIScrollView (APParallaxHeader)
 
-- (void)addParallaxWithMapView:(MKMapView *)mapView andHeight:(CGFloat)height;
+- (void)addParallaxWithView:(UIView *)mapView andHeight:(CGFloat)height;
 
 @property (nonatomic, strong, readonly) APParallaxView *parallaxView;
 @property (nonatomic, assign) BOOL showsParallax;

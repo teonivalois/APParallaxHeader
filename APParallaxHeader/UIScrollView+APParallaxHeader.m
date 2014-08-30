@@ -30,7 +30,7 @@ static char UIScrollViewParallaxView;
 
 @implementation UIScrollView (APParallaxHeader)
 
-- (void)addParallaxWithMapView:(MKMapView *)mapView andHeight:(CGFloat)height
+- (void)addParallaxWithView:(UIView *)mapView andHeight:(CGFloat)height
 {
     if(!self.parallaxView) {
         CGRect newFrame = CGRectMake(0, 0, self.bounds.size.width, height);
